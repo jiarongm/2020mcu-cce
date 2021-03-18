@@ -1,7 +1,6 @@
-# 2020mcu-cce
-# week1
-#1
-
+# 2020mcu-cce-09161141
+## week1
+h1 進階題：分式化簡 
 ```c
 	int x,y,c;
 	scanf("%d%d",&x,&y);
@@ -13,10 +12,7 @@
 	}
 	printf("%d %d\n",x/c,y/c);
 ```c
-
-
-#2
-
+h1 進階題：讀入整數反序列印 
 ```c
 	int a[1000]={},b=0;
 	for(int i=1; ;i++){
