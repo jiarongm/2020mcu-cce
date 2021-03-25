@@ -1,5 +1,5 @@
 # 2020mcu-cce-09161141
-## week1
+## week01-實習
 ### 進階題：分式化簡 
 ```c
 #include <stdio.h>
@@ -121,3 +121,74 @@ int main()
 	else printf("F\n");
 }
 ```
+## week03-實習
+### 進階題：大小寫轉換 
+```c
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char a[10];
+	scanf("%s", a);
+	for(int i=0;i<strlen(a);i++){
+		if(a[i] >='A' && a[i] <='Z' ){
+			a[i]=a[i]+32;
+			printf("%c",a[i]);
+		}
+		else if(a[i] >='a' && a[i] <='z' ){
+			a[i]=a[i]-32;
+			printf("%c",a[i]);
+		}
+		else printf("%c",a[i]);
+	}
+	printf("\n");
+	return 0;
+}
+```
+### 進階題：漸增數列相加
+```c
+#include <stdio.h>
+int main()
+{
+	int n,sum=0;
+	scanf("%d",&n);
+	for(int i=1;i<n;i++){
+		sum+=i*(i+1);
+	}
+	printf("%d\n",sum);
+}
+```
+### 進階題：計算陣列的平方值
+```c
+#include <stdio.h>
+int main()
+{
+	int n,x;
+	int a[11]={};
+	scanf("%d",&n);
+	for(int i=0;i<n;i++){
+		scanf("%d",&a[i]);
+		if(a[i]>a[i+1]&&a[i+1]!=0){
+			int t;
+			t=a[i];
+			a[i]=a[i+1];
+			a[i+1]=t;
+		}
+	}
+	for(int i=0;i<n;i++){
+		printf("%d,",a[i]*a[i]);
+	}
+	printf("\n");
+}
+```
+### 進階題：2進位轉10進位
+```c
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	printf("%d\n",n/1000*8+n%1000/100*4+n%100/10*2+n%10*1);
+}
+```
+### week04 實習
