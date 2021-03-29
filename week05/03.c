@@ -7,8 +7,8 @@ int main()
     printf("%s\n",n1);
     printf("%s\n",n2);
 
-    char n3[]="majority³o¬O¦nªº¡A­n¦hªø¦³¦hªø";
+    char n3[]="majorityé€™æ˜¯å¥½çš„ï¼Œè¦å¤šé•·æœ‰å¤šé•·";
     char n4[]={'m','a','j','o','r','i','t','y'};
     printf("%s\n",n3);
-    printf("³o¬On4:====%s====\n",n4);
+    printf("é€™æ˜¯n4:====%s====\n",n4);
 }
