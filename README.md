@@ -200,7 +200,7 @@ int main()
 #include <stdlib.h>
 char tree[1000000][32];
 int compare(const void* p1,const void* p2){
-	return strcmp((char*)p1,(char*)p2);
+	return strcmp((char*)p1,(char*)p2);//(型別轉換)
 }
 int main(){
 	int n;
