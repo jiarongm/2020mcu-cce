@@ -234,7 +234,7 @@ int main(){
 
 }
 ```
-### week10
+## week10
 ```c
 #include <stdio.h>
 char line[10000];
@@ -248,7 +248,7 @@ int main()
 	}
 }
 ```
-#### 傳換大小寫
+#### 轉換大小寫
 ```c
 #include <stdio.h>
 char line[10000];
