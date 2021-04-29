@@ -291,3 +291,39 @@ int main()
 	}
 }
 ```
+### 排序(數字>字母順序)
+```c
+#include <stdio.h>
+char line[10000];
+char number[26];
+char alphabet[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+int main()
+{
+	int n;
+	scanf("%d\n",&n);
+	for(int i=0;i<n;i++){
+		gets(line);
+		for(int k=0;line[k]!=0;k++){
+			char c=line[k];
+			if(c>='A' && c<='Z')		number[c-'A']++;
+			else if(c>='a' && c<='z')	number[c-'a']++;
+			
+		}
+	}
+	for(int i=0;i<26;i++){
+		for(int j=i+1;j<26;j++){
+			if(number[i]<number[j] ||( number[i]==number[j]&& alphabet[i]>alphabet[j] )  ){
+				int temp=number[i];
+				number[i]=number[j];
+				number[j]=temp;
+				char c        = alphabet[i];
+				alphabet[i]   = alphabet[j];
+				alphabet[j]   = c;
+			}
+		}
+	}
+	for(int i=0;i<26;i++){
+		if(number[i]>0)printf("%c %d\n",alphabet[i],number[i]);
+	}
+}
+```
