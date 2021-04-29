@@ -327,3 +327,43 @@ int main()
 	}
 }
 ```
+### 結束
+```c
+#include <stdio.h>
+#include <stdlib.h>
+char line[10000];
+typedef struct{//資料結構
+	int number;
+	char c;
+}BOX;
+BOX arry[26];
+int compare(const void* p1,const void* p2){
+	if( ((BOX*)p1)->number > ((BOX*)p2)->number )return -1;
+	else if( ((BOX*)p1)->number < ((BOX*)p2)->number )return +1;
+	else if( ((BOX*)p1)->c >((BOX*)p2)->c )return +1;
+	else if( ((BOX*)p1)->c <((BOX*)p2)->c )return -1;
+	else return 0;
+}
+
+int main()
+{
+	for(int i=0;i<26;i++) arry[i].c='A'+i;
+	int n;
+	scanf("%d\n",&n);
+	for(int i=0;i<n;i++)
+	{
+		gets(line);///gets()讀整行
+		for(int k=0;line[k]!=0;k++){
+			char c=line[k];
+			if(c>='A' && c<='Z')		arry[ c-'A' ].number++;
+			else if(c>='a' && c<='z')	arry[ c-'a' ].number++;
+			
+		}
+	}
+	qsort(arry,26,sizeof(BOX),compare);
+
+	for(int i=0;i<26;i++){
+		if(arry[i].number>0)printf("%c %d\n",arry[i].c , arry[i].number);
+	}
+}
+```
