@@ -268,3 +268,26 @@ int main()
 	}
 }
 ```
+### 數數
+```c
+#include <stdio.h>
+char line[10000];
+char number[26];//總共26個字母
+int main()
+{
+	int n;
+	scanf("%d\n",&n);
+	for(int i=0;i<n;i++){
+		gets(line);
+		for(int k=0;line[k]!=0;k++){
+			char c=line[k];
+			if(c>='A' && c<='Z')		number[c-'A']++;
+			else if(c>='a' && c<='z')	number[c-'a']++;
+			
+		}
+	}
+	for(int i=0;i<26;i++){
+		printf("%c %d\n",'A'+i,number[i]);
+	}
+}
+```
