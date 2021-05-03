@@ -241,7 +241,7 @@ char line[10000];
 int main()
 {
 	int n;
-	scanf("%d\n",&n);// \n避免輸入換航站位
+	scanf("%d\n",&n);// \n避免輸入換行站位
 	for(int i=0;i<n;i++){
 		gets(line);
 		printf("%s\n",line);
