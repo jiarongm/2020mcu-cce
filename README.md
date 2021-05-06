@@ -366,4 +366,21 @@ int main()
 		if(arry[i].number>0)printf("%c %d\n",arry[i].c , arry[i].number);
 	}
 }
+
+```
+<hr>
+<h2>week11</h2>
+<br>
+
+```c
+#include <stdio.h>
+unsigned char c;
+typedef unsigned char uchar;
+uchar d;
+int main()
+{
+    c='A';
+    d=c;
+    printf("%c",d);
+}
 ```
