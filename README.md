@@ -384,7 +384,7 @@ int main()
     printf("%c",d);
 }
 ```
-
+<p>typedef 前面是舊名字 新名字; 可以[再定義]</p>
 ```c
 #include <stdio.h>
 typedef struct data{
