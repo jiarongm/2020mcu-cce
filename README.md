@@ -375,12 +375,27 @@ int main()
 ```c
 #include <stdio.h>
 unsigned char c;
-typedef unsigned char uchar;
+typedef unsigned char uchar;//重新命名
 uchar d;
 int main()
 {
     c='A';
     d=c;
     printf("%c",d);
+}
+```
+
+```c
+#include <stdio.h>
+typedef struct data{
+    char c;
+    int ans;
+} DATA;//重新命名為DATA
+DATA listA;
+int main()
+{
+    listA.c='A';
+    listA.ans=1;
+    printf("%c %d\n",listA.c,listA.ans);
 }
 ```
