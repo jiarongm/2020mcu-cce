@@ -390,12 +390,34 @@ int main()
 typedef struct data{
     char c;
     int ans;
-} DATA;//重新命名為DATA
+} DATA;// typedef 前面是舊名字 新名字; 可以[再定義]
 DATA listA;
 int main()
 {
     listA.c='A';
     listA.ans=1;
     printf("%c %d\n",listA.c,listA.ans);
+}
+```
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+int compare(const void* p1,const void* p2){
+    int d1=*( (int*)p1 );
+    int d2=*( (int*)p2 );
+    if(d1>d2) return 1;
+    if(d1==d2) return 0;
+    if(d1<d2) return -1;
+
+}
+int a[10]={4,6,5,8,9,7,2,3,1,10};
+int main()
+{
+    qsort(a,10,sizeof(int),compare);
+    for(int i=0;i<10;i++){
+        printf("%d ",a[i]);
+
+    }
 }
 ```
