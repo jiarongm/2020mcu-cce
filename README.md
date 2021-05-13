@@ -426,7 +426,10 @@ int main()
 <h2>week12</h2>
 <h4>UVA10062</h4>
 <br>
+
+
 ```c
+
 #include <stdio.h>
 char line[1001];
 int main()
@@ -451,7 +454,7 @@ int main()
 					ascii[t]=ascii[x];
 					ascii[x]=c;
 				}
-				if(ans[t]==ans[x] && ascii[t]<ascii[x]){
+				if(ans[t]==ans[x] && ascii[t]<ascii[x]){ //字母的頻率相同時 字母從大到小排序
 					int temp=ans[t];
 					ans[t]=ans[x];
 					ans[x]=temp;
