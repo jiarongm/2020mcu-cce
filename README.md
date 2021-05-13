@@ -473,3 +473,86 @@ int main()
 	}
 }
 ```
+### UVA299
+
+```c
+#include <stdio.h>
+int a[100];
+int main()
+{
+	int T;
+	scanf("%d",&T);
+	for(int t=0;t<T;t++){
+	
+		int N;
+		scanf("%d",&N);
+		for(int i=0;i<N;i++){
+			scanf("%d",&a[i]);
+		}
+		int ans=0;
+		for(int k=0;k<N-1;k++){			//兩兩相比 省去最後一次
+			for(int i=0;i<N-1;i++){		//兩兩相比 最右邊-1
+				if(a[i]>a[i+1]){
+					int temp=a[i];
+					a[i]=a[i+1];
+					a[i+1]=temp;
+					ans++;
+				}
+			}
+		}
+		printf("Optimal train swapping takes %d swaps.\n",ans);
+	}
+}
+```
+### UVA11321
+```c
+#include <stdio.h>
+#include <stdlib.h>
+/*int compare(const void* p1,const void* p2)
+{
+	
+}*/
+int a[10000];
+int main()
+{
+	int N,M;
+	while( scanf("%d %d",&N,&M)==2){
+		for(int i=0;i<N;i++){
+			scanf("%d",&a[i]);
+		}
+		printf("%d %d\n",N,M);
+		
+		for(int i=0;i<N;i++){
+			for(int j=i+1;j<N;j++){
+				if(a[i]%M > a[j]%M){//餘數小到大
+					int temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+				if(a[i]%M==a[j]%M && a[i]%2==0 && a[j]%2!=0 ){//餘數相同-奇數先排
+					int temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+				if(a[i]%M==a[j]%M && a[i]%2!=0 && a[j]%2!=0 && a[i]<a[j] ){//奇數由大到小
+					int temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+				if(a[i]%M==a[j]%M && a[i]%2==0 && a[j]%2==0 && a[i]>a[j] ){//偶數小到大
+					int temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+				
+			}
+		}
+		
+		//*qsort(a,N,10000,compare);
+		
+		for(int i=0;i<N;i++){
+			printf("%d\n",a[i]);
+		}
+	}
+} 	
+```
