@@ -422,3 +422,51 @@ int main()
     }
 }
 ```
+<hr>
+<h2>week12</h2>
+<h4>UVA10062</h4>
+<br>
+```c
+#include <stdio.h>
+char line[1001];
+int main()
+{
+	for(int i=0;gets(line);i++){
+		
+		int ans[256]={};
+		char ascii[256];
+		for(int t=0;t<256;t++)ascii[t]=t;
+		for(int t=0;line[t]!=0;t++){
+			char c=line[t];
+			ans[c]++;
+		}
+		
+		for(int t=0;t<256;t++){
+			for(int x=t+1;x<256;x++){
+				if(ans[t]>ans[x]){
+					int temp=ans[t];
+					ans[t]=ans[x];
+					ans[x]=temp;
+					char c=ascii[t];
+					ascii[t]=ascii[x];
+					ascii[x]=c;
+				}
+				if(ans[t]==ans[x] && ascii[t]<ascii[x]){
+					int temp=ans[t];
+					ans[t]=ans[x];
+					ans[x]=temp;
+					char c=ascii[t];
+					ascii[t]=ascii[x];
+					ascii[x]=c;
+				}
+			}
+		}
+		
+		
+		if(i>0)printf("\n");
+		for(int t=0;t<256;t++){
+			if(ans[t]>0)printf("%d %d\n",ascii[t],ans[t]);
+		}
+	}
+}
+```
