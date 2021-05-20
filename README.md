@@ -556,3 +556,28 @@ int main()
 	}
 } 	
 ```
+
+```
+void setup()
+{
+  size(1024,400);
+  textFont(createFont("標楷體",80) );//使用中文
+}
+void draw(){//互動版本 每秒畫60次
+  background(240,180,90);
+  int s = second();  // Values from 0 - 59
+  int m = minute();  // Values from 0 - 59
+  int h = hour();    // Values from 0 - 23
+  textSize(48);//字體大小
+  text(h + ":" + m + ":" + s , 100 , 200);
+    //數字+字串  數字+字串  數字
+  int total=s + 60*m + 60*60*h;//現在總秒數
+  int closeH=17, closeM=40, closeS=0;//下課時間
+  int total2=closeS + 60*closeM + 60*60*closeH;
+  int ans=total2-total;
+  int ans2=ans/60;
+  text("剩下幾秒:"+ans,100,100);
+  text("剩下幾分:"+ans2,400,100);
+}
+
+```
