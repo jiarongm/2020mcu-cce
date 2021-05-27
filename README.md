@@ -607,3 +607,31 @@ void mousePressed(){
   }
 }
 ```
+
+```
+int []a=new int[47];            //Java的陣列
+void setup(){
+  size(1000,200);
+  textSize(30);
+  for(int i=0;i<47;i++)a[i]=i;  //在a[]陣列裡放相應數字
+  for(int i=0;i<1000;i++){
+    int i1=(int)random(47);
+    int i2=(int)random(47);
+    int temp=a[i1];a[i1]=a[i2];a[i2]=temp;
+    
+  }
+}
+int N=0;
+
+void draw(){
+  textAlign(CENTER,CENTER);//文字對齊(中間,中間)
+  background(102,165,99);
+  for(int i=0;i<N;i++){
+    fill(255); ellipse( i*80+40, 100,55,55);//畫圓
+    fill(0); text(a[i], i*80+40, 100);// fill顏色填滿
+  }
+}
+void mousePressed(){//利用滑鼠互動 決定秀幾個
+  N++;
+}
+```
