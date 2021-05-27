@@ -583,4 +583,25 @@ void draw(){//互動版本 每秒畫60次
 ```
 
 ```
-
+int []a={1,2,3,4,5,6,7,8,9,10};//Java
+int i1,i2;
+void setup(){
+  size(400,100);        //視窗大小
+  textSize(20);        //文字大小
+}
+void draw(){            //每秒畫60次
+  background(102,189,233);
+  for(int i=0;i<10;i++){
+    text( a[i],i*40,50);
+  }
+  rect(i1*40, 50, 30, 30);//方塊(X座標,Y座標 , X長,Y寬)
+  rect(i2*40, 50, 30, 30);
+}
+void mousePressed(){
+    for(int i=0;i<100;i++){
+    i1=(int)random(10);
+    i2=(int)random(10);
+    int temp=a[i1];a[i1]=a[i2];a[i2]=temp;//交換
+  }
+}
+```
