@@ -635,3 +635,70 @@ void mousePressed(){//利用滑鼠互動 決定秀幾個
   N++;
 }
 ```
+### week15
+javascript
+
+```
+function setup(){
+  createCanvas(400,200);
+}
+function draw(){
+  let s=second();
+  if(s%2==0){
+    background(120,66,133);
+ }
+  else {
+    background(58,66,192);
+  }
+}
+```
+滑鼠控制音樂播放
+```
+import processing.sound.*;
+SoundFile player;
+void setup(){
+  size(400,200);
+  player=new SoundFile(this,"bell.mp3");
+  
+}
+void draw(){
+  background(128,187,66);
+}
+void mousePressed(){
+  if(player.isPlaying()){
+    player.stop();
+  }else{
+    player.play();
+  }
+}
+```
+
+```
+import processing.sound.*;
+SoundFile player;
+void setup(){
+  size(400,200);
+  textSize(40);
+  player=new SoundFile(this,"tada.mp3");
+}
+void draw(){
+  int s=second();//0.1...59
+  background(198,88,88);
+  text(10-s%11,150,100);//10-s%11 倒數10秒 
+          //%11:0-10共11個數
+  if(10-s%11==0 && !player.isPlaying() ){
+    player.play();//如果有一個正在撥放 其他則不播
+  }
+}// %11:因為0-10共11個數字
+```
+
+```
+void setup(){
+  size(400,200);
+}
+void draw(){
+  int s=second();
+  if(s%2==0)background(120,66,133);
+  else background(58,66,192);
+}
+```
