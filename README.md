@@ -702,3 +702,38 @@ void draw(){
   else background(58,66,192);
 }
 ```
+### week16旋轉盤
+
+```
+void setup(){
+  size(400,200);
+}
+float start=0,v=0.03;//v是初始速度
+
+void draw(){
+  background(82,66,189);
+  if(v>0.001){//如果速度很慢 就不轉
+    start+=v;//位置 .速度 .加速度(位置 +速度)
+    v *=0.99;//位置 .速度 .加速度(速度 +加速度)
+  }
+  //fill(255);
+  //ellipse(100,100,180,180);//畫圓
+        //圓心  寬 高
+  //if(start<10)start+=0.01;
+  //float start=mouseX/50.0;
+  fill(255);textSize(40);text(start,200,150);text(v,250,200);
+  for(int i=0;i<24;i++){        //圓分成24等分
+    float shift=2*PI*i/24.0;    //PI=圓周率  // 2*PI 圓周
+    
+    if(i%3==0)fill(0);
+    if(i%3==1)fill(#FFF86A);
+    if(i%3==2)fill(255);
+    if(i==0)fill(#FA761E);
+    arc(100,100,180,180,shift+0+start,shift + PI/12 + start);//畫出圓弧
+  }
+  //圓心  寬 高  開始 結束
+}
+void mousePressed(){
+  v=random(1);    //取亂數
+}
+```
