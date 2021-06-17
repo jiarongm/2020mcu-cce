@@ -737,3 +737,71 @@ void mousePressed(){
   v=random(1);    //取亂數
 }
 ```
+### WEEK 17
+#### 字串輸出
+
+
+```
+void setup(){
+  size(400,200);
+  textSize(40);
+}
+String line="Hello"; //字串
+char c='9';
+void draw(){          //1秒60次
+  background(122,87,106);
+  text(line+c+100,100,100);
+  text("World:"+key,100,150);//可將字串輸出 +號越接越長
+}//key 對應最後鍵盤的輸出(字母,數,符號)
+```
+
+### key
+```
+void setup(){
+  size(400,200);
+  textSize(40);
+}
+char c='9';
+String ans="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+int win=0;
+void draw(){
+  background(188,66,179);
+  text("Press:"+c,100,100);
+  text("You  :"+key,100,150);
+  if(c==key)win=1;
+  else win=0;
+  if(win==1){
+    text("You Win!",100,50);
+    int i=int(random(26+26));//0-52 亂數中挑一個整數i
+    c=ans.charAt(i);//找出ans字串中的第i個字母
+  }
+}
+```
+
+### keyPressed()
+
+```
+void setup(){
+  size(400,200);
+  textSize(40);
+  
+}
+float x=100,y=100,vx=0,vy=0;
+void draw(){
+  background(188,109,164);
+  fill(95,165,83);rect(x,y,50,50,20);
+  x+=vx;//加速度=vx 
+  y+=vy;//每秒60次，等速(順暢)
+}
+
+void keyPressed(){
+  if(keyCode==LEFT)vx-=1;
+  if(keyCode==RIGHT)vx+=1;
+  if(keyCode==UP)vy-=1;
+  if(keyCode==DOWN)vy+=1;
+}
+void keyReleased(){
+  vx=0;
+  vy=0;
+}
+```
