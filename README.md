@@ -829,3 +829,50 @@ void keyPressed(){
                        //使用方式: 字串名稱.substring( 起點,結束位置(不包含) )  
 }
 ```
+#### week18Processing放入圖片/影片
+#####找鏡頭
+```
+import processing.video.*;
+Capture cam; 
+void setup(){
+  size(640,480);
+  println( Capture.list() );
+}
+```
+
+```
+import processing.video.*;//為了視訊/影片
+Capture cam; //全域變數
+void setup(){
+  size(640,480);
+  println( Capture.list() );//列出所有Capture所抓到的鏡頭
+  cam=new Capture(this,"HD WebCam");
+  cam.start();//開啟你的鏡頭
+}
+void draw(){
+  if(cam.available() ){
+    cam.read();
+    set(0,0,cam);
+   }
+}
+```
+
+```
+import processing.video.*;
+Moive movie;
+void setup(){
+  size(640,480);
+  
+  movie=new Movie(this,"檔名.mov");
+  movie.play();
+}
+void draw(){
+  if(movie.available() ){
+    movie.read();
+    set(0,0,movie);//把movie放到座標(0.0)的位置
+    
+  }
+}
+```
+
+
