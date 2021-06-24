@@ -829,7 +829,7 @@ void keyPressed(){
                        //使用方式: 字串名稱.substring( 起點,結束位置(不包含) )  
 }
 ```
-#### week18Processing放入圖片/影片
+### week18Processing放入圖片/影片
 ##### 找鏡頭
 ```
 import processing.video.*;
