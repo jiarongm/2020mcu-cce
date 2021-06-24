@@ -830,7 +830,7 @@ void keyPressed(){
 }
 ```
 #### week18Processing放入圖片/影片
-#####找鏡頭
+##### 找鏡頭
 ```
 import processing.video.*;
 Capture cam; 
